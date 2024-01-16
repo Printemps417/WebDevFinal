@@ -2,6 +2,7 @@ package com.example.todoSpringboot.controller;
 
 import com.baomidou.mybatisplus.core.conditions.update.UpdateWrapper;
 import com.example.todoSpringboot.entity.*;
+import com.example.todoSpringboot.note.AuthToken;
 import com.example.todoSpringboot.service.*;
 import com.example.todoSpringboot.utils.CommonResult;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,6 +13,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @RestController
+@AuthToken
 @RequestMapping("/studentlesson")
 public class StudentLessonController {
     @Autowired

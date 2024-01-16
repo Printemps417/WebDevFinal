@@ -3,6 +3,7 @@ package com.example.todoSpringboot.controller;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.example.todoSpringboot.common.CommonResult;
 import com.example.todoSpringboot.entity.Majors;
+import com.example.todoSpringboot.note.AuthToken;
 import com.example.todoSpringboot.service.MajorsService;
 import com.example.todoSpringboot.utils.LockUtils;
 import lombok.extern.slf4j.Slf4j;
@@ -25,6 +26,7 @@ import java.util.stream.Collectors;
  */
 @RestController
 @Slf4j
+@AuthToken
 @RequestMapping("/majors")
 public class MajorsController {
 

@@ -17,6 +17,7 @@ import java.util.concurrent.TimeUnit;
 
 @CrossOrigin
 @RestController
+@AuthToken
 @RequestMapping("/accounts")
 @RequiredArgsConstructor
 public class AccountController {
@@ -86,7 +87,6 @@ public class AccountController {
             return CommonResult.error(401,"刷新失败");
         }
     }
-    @AuthToken
     @GetMapping("/getinfo")
     public CommonResult<?> getUserProfile(@RequestHeader("Authorization") String authHeader) {
         try{

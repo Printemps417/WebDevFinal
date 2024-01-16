@@ -3,6 +3,7 @@ package com.example.todoSpringboot.controller;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.example.todoSpringboot.common.CommonResult;
 import com.example.todoSpringboot.entity.Teachers;
+import com.example.todoSpringboot.note.AuthToken;
 import com.example.todoSpringboot.service.Impl.LessonsServiceImpl;
 import com.example.todoSpringboot.service.MajorsService;
 import com.example.todoSpringboot.service.TeachersService;
@@ -28,6 +29,7 @@ import java.util.stream.Collectors;
  * @Version 1.0
  */
 @RestController
+@AuthToken
 @Slf4j
 @RequestMapping("/teachers")
 public class TeachersController {

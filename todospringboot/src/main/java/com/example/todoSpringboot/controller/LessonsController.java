@@ -30,6 +30,7 @@ import java.util.stream.Collectors;
  * @Version 1.0
  */
 @RestController
+@AuthToken
 @RequestMapping("/lessons")
 @Slf4j
 public class LessonsController {

@@ -1,6 +1,7 @@
 package com.example.todoSpringboot.controller;
 
 import com.example.todoSpringboot.entity.Student;
+import com.example.todoSpringboot.note.AuthToken;
 import com.example.todoSpringboot.service.AccountService;
 import com.example.todoSpringboot.service.StudentLessonService;
 import com.example.todoSpringboot.service.StudentService;
@@ -11,6 +12,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
+@AuthToken
 @RequestMapping("/student")
 public class StudentController {
     @Autowired

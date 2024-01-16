@@ -38,7 +38,7 @@ public class WebMvcConfig implements WebMvcConfigurer {
     public void addInterceptors(InterceptorRegistry registry) {
         registry.addInterceptor(authTokenInterceptor)
                 .addPathPatterns("/**") // 应用到所有API
-                .excludePathPatterns("/users/login", "/register","/users/reloadtoken"); // 排除登录和注册接口
+                .excludePathPatterns("/accounts/login","/accounts/reloadtoken"); // 排除登录和token刷新接口
     }
 
 }
