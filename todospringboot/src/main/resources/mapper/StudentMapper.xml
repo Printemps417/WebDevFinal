@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.example.todoSpringboot.mapper.StudentMapper">
+    <select id="getStudentById" resultType="com.example.todoSpringboot.entity.Student">
+        SELECT * FROM students WHERE student_id = #{id}
+    </select>
+
+    <select id="getAllStudents" resultType="com.example.todoSpringboot.entity.Student">
+        SELECT * FROM students
+    </select>
+
+    <insert id="addStudent" useGeneratedKeys="true" >
+        INSERT INTO students(student_name,student_sex,major_id) VALUES(#{studentName}, #{studentSex},#{majorId})
+    </insert>
+
+    <update id="updateStudent" parameterType="com.example.todoSpringboot.entity.Student">
+        UPDATE students SET student_name = #{studentName}, student_sex = #{studentSex},major_id=#{majorId} WHERE student_id = #{studentId}
+    </update>
+    <delete id="deleteStudent">
+        DELETE from students WHERE student_id = #{student_id}
+    </delete>
+
+</mapper>

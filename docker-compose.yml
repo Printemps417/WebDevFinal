@@ -1,0 +1,83 @@
+version: '3.4'
+
+services:
+  mysql:
+    container_name: test-mysql
+    image: mysql:5.7
+    restart: unless-stopped
+    tty: true
+    ports:
+      - '3306:3306'
+    environment:
+      MYSQL_DATABASE: ${MYSQL_DATABASE:-root}
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD:-qwe123}
+    volumes:
+      - mysql:/var/lib/mysql/
+      - ./sql/course.sql:/docker-entrypoint-initdb.d/course.sql:ro
+
+  redis:
+    container_name: ssadmin-redis
+    image: redis:6-alpine
+    restart: unless-stopped
+    ports:
+      - '6379:6379'
+    volumes:
+      - redis:/data
+
+  rabbitmq:
+    container_name: rabbitmq
+    image: rabbitmq:3-management
+    restart: unless-stopped
+    ports:
+      - '5672:5672'
+      - '15672:15672'
+    environment:
+      RABBITMQ_DEFAULT_USER: ${RABBITMQ_USER:-root}
+      RABBITMQ_DEFAULT_PASS: ${RABBITMQ_PASSWORD:-qwe123}
+
+  server:
+    container_name: todospringboot
+    build:
+      context: ./todospringboot/
+    image: todospringboot
+    restart: unless-stopped
+    ports:
+      - '8080:8080'
+    environment:
+      SPRING_PROFILES_ACTIVE: local
+      JAVA_OPTS: ${JAVA_OPTS:-
+        -Xms512m
+        -Xmx512m
+        -Djava.security.egd=file:/dev/./urandom
+        }
+      ARGS:
+        --spring.datasource.url=${DATASOURCE_URL:-jdbc:mysql://test-mysql:3306/course_system}
+        --spring.datasource.username=${DATASOURCE_USERNAME:-root}
+        --spring.datasource.password=${DATASOURCE_PASSWORD:-qwe123}
+        --spring.redis.host=${REDIS_HOST:-ssadmin-redis}
+        --spring.rabbitmq.host=${RABBITMQ_HOST:-rabbitmq}
+
+    depends_on:
+      - mysql
+      - redis
+      - rabbitmq
+
+  web:
+    container_name: web
+    build:
+      context: ./web
+      args:
+        NODE_ENV: ENV=${NODE_ENV:-production}
+          VUE_APP_TITLE=${VUE_APP_TITLE:-SSADMIN管理系统}
+    image: web
+    restart: unless-stopped
+    ports:
+      - '80:80'
+    depends_on:
+      - server
+
+volumes:
+  mysql:
+    driver: local
+  redis:
+    driver: local

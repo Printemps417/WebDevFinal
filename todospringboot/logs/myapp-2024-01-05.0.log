@@ -1,0 +1,23 @@
+2024-01-05 00:00:00 [restartedMain] INFO  c.e.t.TodoSpringbootApplication - Starting TodoSpringbootApplication using Java 1.8.0_381 on LAPTOP-EUEHO147 with PID 24068 (E:\local_repository\FinalWork\todospringboot\target\classes started by runoob in E:\local_repository\FinalWork\todospringboot)
+2024-01-05 00:00:00 [restartedMain] INFO  c.e.t.TodoSpringbootApplication - No active profile set, falling back to 1 default profile: "default"
+2024-01-05 00:00:00 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-01-05 00:00:00 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-01-05 00:00:01 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2024-01-05 00:00:01 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2024-01-05 00:00:01 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 7 ms. Found 0 Redis repository interfaces.
+2024-01-05 00:00:01 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8082 (http)
+2024-01-05 00:00:01 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2024-01-05 00:00:01 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.80]
+2024-01-05 00:00:01 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-01-05 00:00:01 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 792 ms
+2024-01-05 00:00:03 [restartedMain] WARN  c.b.m.core.metadata.TableInfoHelper - Can not find table primary key in Class: "com.example.todoSpringboot.entity.StudentsLessons".
+2024-01-05 00:00:05 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2024-01-05 00:00:05 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8082 (http) with context path ''
+2024-01-05 00:00:05 [restartedMain] INFO  o.s.a.r.c.CachingConnectionFactory - Attempting to connect to: [localhost:5672]
+2024-01-05 00:00:05 [restartedMain] INFO  o.s.a.r.c.CachingConnectionFactory - Created new connection: rabbitConnectionFactory#12feef0:0/SimpleConnection@71f99a [delegate=amqp://user01@127.0.0.1:5672/, localPort= 49800]
+2024-01-05 00:00:05 [restartedMain] INFO  c.e.t.TodoSpringbootApplication - Started TodoSpringbootApplication in 4.609 seconds (JVM running for 5.833)
+2024-01-05 00:00:05 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2024-01-05 00:00:05 [http-nio-8082-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-01-05 00:00:05 [http-nio-8082-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2024-01-05 00:00:05 [http-nio-8082-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 0 ms
+2024-01-05 00:00:05 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.example.todoSpringboot.mapper.StudentLessonMapper">
+    <select id="getAllStudentLessons" resultType="com.example.todoSpringboot.entity.StudentLesson">
+        SELECT * FROM students_lessons
+    </select>
+    <select id="getStudentLessonById" resultType="com.example.todoSpringboot.entity.StudentLesson">
+        SELECT * FROM students_lessons WHERE student_id = #{student_id}
+    </select>
+
+    <insert id="addStudentLesson" useGeneratedKeys="true" keyProperty="student_id">
+        INSERT INTO students_lessons(student_id, lesson_id) VALUES (#{studentId}, #{lessonId})
+    </insert>
+    <delete id="deleteStudentLesson">
+        DELETE from students_lessons WHERE student_id = #{student_id} AND lesson_id=#{lesson_id}
+    </delete>
+    <delete id="deleteStudentLessons">
+        DELETE from students_lessons WHERE student_id = #{student_id}
+    </delete>
+
+
+</mapper>
